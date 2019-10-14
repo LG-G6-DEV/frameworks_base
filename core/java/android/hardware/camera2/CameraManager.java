@@ -940,6 +940,7 @@ public final class CameraManager {
                 int idCount = 0;
                 for (int i = 0; i < mDeviceStatus.size(); i++) {
                     if(!exposeAuxCamera && (i == 2)) break;
+                    if(i == 3) continue;    // skip the 3rd id as this must be our phantom cam
                     int status = mDeviceStatus.valueAt(i);
                     if (status == ICameraServiceListener.STATUS_NOT_PRESENT ||
                             status == ICameraServiceListener.STATUS_ENUMERATING) continue;
@@ -949,6 +950,7 @@ public final class CameraManager {
                 idCount = 0;
                 for (int i = 0; i < mDeviceStatus.size(); i++) {
                     if(!exposeAuxCamera && (i == 2)) break;
+                    if(i == 3) continue;    // skip the 3rd id as this must be our phantom cam
                     int status = mDeviceStatus.valueAt(i);
                     if (status == ICameraServiceListener.STATUS_NOT_PRESENT ||
                             status == ICameraServiceListener.STATUS_ENUMERATING) continue;
